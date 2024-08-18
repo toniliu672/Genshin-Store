@@ -19,10 +19,16 @@ const App: React.FC = () => {
         {/* Shop tanpa layout khusus */}
         {/* <Route path="/shop" element={<Shop />} /> */} 
 
+        {/* Redirect root and /shop to /product/1 */}
         <Route path="/" element={<Navigate to="/product/1" />} />
         <Route path="/shop" element={<Navigate to="/product/1" />} />
-        <Route path="/product/*" element={<ProductLayout />}>
-          <Route path=":id" element={<Product />} />
+        
+        {/* Route for /product, redirects to /product/1 if no specific product ID is provided */}
+        <Route path="/product" element={<Navigate to="/product/1" replace />} />
+
+        {/* Product routes */}
+        <Route path="/product/:id" element={<ProductLayout />}>
+          <Route index element={<Product />} />
         </Route>
 
         {/* Product menggunakan ProductLayout */}
