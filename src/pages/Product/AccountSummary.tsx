@@ -300,8 +300,8 @@ const AccountSummary: React.FC = () => {
                 key={index}
                 sx={{
                   "@media (min-width: 960px)": {
-                    flexBasis: "22%",
-                    maxWidth: "22%",
+                    flexBasis: "19%",
+                    maxWidth: "19%",
                   },
                 }}
               >
