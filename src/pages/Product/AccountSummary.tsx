@@ -6,6 +6,7 @@ import StarIcon from "@mui/icons-material/Star";
 import LanguageIcon from "@mui/icons-material/Language"; // Import icon for server
 import useDeviceSize from "../../hooks/useDeviceSize";
 import { gsap } from "gsap";
+import aetherIcon from '../../assets/character/Aether_Icon.webp';
 
 const AccountSummary: React.FC = () => {
   const isMobile = useDeviceSize();
@@ -157,21 +158,22 @@ const AccountSummary: React.FC = () => {
       <Box className="p-6 text-white">
         <Grid container spacing={isMobile ? 2 : 3} alignItems="center">
           <Grid item xs={12} md={3} className="text-center">
-            <Avatar
-              alt="Main Character"
-              src="../../assets/"
-              sx={{
-                width: isMobile ? 100 : 150,
-                height: isMobile ? 100 : 150,
-                marginBottom: 2,
-                border: "4px solid #ffd700",
-              }}
-            />
+            <Box className={`flex justify-center ${isMobile ? 'mb-4' : ''}`}>
+              <Avatar
+                alt="Main Character"
+                src={aetherIcon}
+                sx={{
+                  width: isMobile ? 100 : 150,
+                  height: isMobile ? 100 : 150,
+                  border: "4px solid #ffd700",
+                }}
+              />
+            </Box>
           </Grid>
           <Grid item xs={12} md={9}>
             <Typography
               variant={isMobile ? "h5" : "h4"}
-              className="font-bold mb-4"
+              className={`font-bold mb-4 ${isMobile ? 'text-center' : ''}`}
               style={{ color: "#ffd700" }}
             >
               High Primo Acc

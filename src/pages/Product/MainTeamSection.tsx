@@ -90,7 +90,7 @@ const MainTeamSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex-1 relative mt-6 md:mt-0">
+        <div className="mt-6 md:mt-0">
           <div
             className="w-full rounded-lg shadow-lg mx-auto mb-4 md:mb-0"
             style={{

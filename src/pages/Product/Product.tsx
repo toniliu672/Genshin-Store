@@ -12,6 +12,7 @@ import AccountSummary from './AccountSummary';
 import MainTeamSection from './MainTeamSection';
 import GallerySection from './GallerySection';
 import Separator from '../../components/Separator';  // Mengimpor Separator dari components
+import SpiralAbyss from './SpiralAbbys';
 
 const imageLinks = [
   'https://i.imgur.com/uG4GBWM.jpg',
@@ -86,6 +87,8 @@ const Product: React.FC = () => {
         className="glass-background p-5 md:p-10 bg-gray-900 bg-opacity-80 backdrop-blur-lg rounded-lg shadow-lg max-w-full md:max-w-5xl mx-auto"
       >
         <AccountSummary />
+        <Separator />
+        <SpiralAbyss />
         <Separator />
         <MainTeamSection />
         <Separator />
