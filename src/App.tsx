@@ -26,9 +26,9 @@ const App: React.FC = () => {
         </Route>
 
         {/* Product menggunakan ProductLayout */}
-        <Route path="/product" element={<ProductLayout />}>
+        {/* <Route path="/product" element={<ProductLayout />}>
           <Route path=":id" element={<Product />} />
-        </Route>
+        </Route> */}
       </Routes>
     </Router>
   );
