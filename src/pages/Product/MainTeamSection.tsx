@@ -76,7 +76,7 @@ const MainTeamSection: React.FC = () => {
 
           <Typography
             variant={isMobile ? 'h4' : 'h2'}
-            className="text-black font-bold mb-2 text-center"
+            className="text-black font-extrabold mb-2 text-center"
           >
             {currentCharacter.name}
           </Typography>
@@ -85,7 +85,7 @@ const MainTeamSection: React.FC = () => {
             className={`bg-black bg-opacity-60 p-4 rounded-lg ${isMobile ? 'w-full mx-auto text-center' : 'max-w-md'}`}
           >
             <Typography variant="body2" className="text-white">
-              Tim ini difokuskan untuk memaksimalkan damage dari reaksi Hyperbloom, Ocean-Hued, dan Quicken. Kombinasi elemen-elemen ini memastikan DPS yang tinggi dan sinergi elemen yang berkelanjutan di seluruh tim.
+              Party utama, berfokus pada damage reaksi <span className='text-green-400'>Hyperbloom</span>, <span className='text-pink-300'>Ocean-Hued</span>, dan <span className='text-green-400'>Quicken</span>. Synergy Electro memastikan energy recharge yang baik agar burst selalu aktif saat rotasi.
             </Typography>
           </div>
         </div>

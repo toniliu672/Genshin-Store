@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from "react";
-import { Typography, Card, Grid, Box, Avatar, Button} from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
+import { Typography, Card, Grid, Box, Avatar, Button, IconButton} from "@mui/material";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import PersonIcon from "@mui/icons-material/Person";
 import StarIcon from "@mui/icons-material/Star";
 import LanguageIcon from "@mui/icons-material/Language";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import useDeviceSize from "../../hooks/useDeviceSize";
 import { gsap } from "gsap";
 import aetherIcon from '../../assets/character/Aether_Icon.webp';
@@ -13,6 +15,11 @@ import aetherIcon from '../../assets/character/Aether_Icon.webp';
 const AccountSummary: React.FC = () => {
   const isMobile = useDeviceSize();
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isPriceVisible, setIsPriceVisible] = useState(false);
+
+  const togglePriceVisibility = () => {
+    setIsPriceVisible(!isPriceVisible);
+  };
 
   const accountDetails = [
     { icon: <DiamondIcon />, label: "Primogems", value: "81,000+" },
@@ -181,25 +188,51 @@ const AccountSummary: React.FC = () => {
               High Primo Acc
             </Typography>
             <Typography
-              variant="body1"
-              className="mb-6"
-              style={{
-                lineHeight: "1.8",
-                color: "#d3d3d3",
-                fontWeight: "300",
-                textAlign: isMobile ? "center" : "left",
-              }}
-            >
-              <span style={{ fontWeight: "bold", color: "#ffd700" }}>
-                Akun High Primo
-              </span>{" "}
-              - murni tanpa cheat.
-              <br />
-              <span style={{ fontWeight: "bold" }}>
-                Jual Akun Genshin Impact:
-              </span>{" "}
-              81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
-            </Typography>
+        variant="body1"
+        className="mb-6"
+        style={{
+          lineHeight: "1.8",
+          color: "#d3d3d3",
+          fontWeight: "300",
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
+        <span style={{ fontWeight: "bold", color: "#ffd700" }}>
+          Akun High Primo
+        </span>{" "}
+        - murni tanpa cheat.
+        <br />
+        <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: isMobile ? "center" : "left",
+        }}
+      >
+        <Typography
+          variant="body1"
+          style={{
+            lineHeight: "1.8",
+            color: "#ffd700",
+            fontWeight: "bold",
+          }}
+        >
+          Harga {isPriceVisible ? "Rp1.300.000" : "Rp*********"}
+        </Typography>
+        <IconButton
+          onClick={togglePriceVisibility}
+          sx={{ color: "#ffd700", marginLeft: 1 }}
+        >
+          {isPriceVisible ? <VisibilityOffIcon /> : <VisibilityIcon />}
+        </IconButton>
+      </Box>
+        <span style={{ fontWeight: "bold" }}>
+          Jual Akun Genshin Impact:
+        </span>{" "}
+        81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
+      </Typography>
+
+
             {/* Add Buttons for Contact */}
             <Box
               display="flex"
