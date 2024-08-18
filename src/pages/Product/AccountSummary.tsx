@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, Card, Grid, Box, Avatar } from "@mui/material";
+import { Typography, Card, Grid, Box, Avatar, Button} from "@mui/material";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import PersonIcon from "@mui/icons-material/Person";
 import StarIcon from "@mui/icons-material/Star";
-import LanguageIcon from "@mui/icons-material/Language"; // Import icon for server
+import LanguageIcon from "@mui/icons-material/Language";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import useDeviceSize from "../../hooks/useDeviceSize";
 import { gsap } from "gsap";
 import aetherIcon from '../../assets/character/Aether_Icon.webp';
@@ -87,7 +89,7 @@ const AccountSummary: React.FC = () => {
       label: "Server",
       value: "Asia",
       color: "#d3d3d3",
-    }, // New Server Box
+    }, 
   ];
 
   useEffect(() => {
@@ -198,6 +200,39 @@ const AccountSummary: React.FC = () => {
               </span>{" "}
               81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
             </Typography>
+            {/* Add Buttons for Contact */}
+            <Box
+              display="flex"
+              justifyContent={isMobile ? "center" : "left"}
+              gap={2}
+            >
+              <Button
+                variant="contained"
+                startIcon={<WhatsAppIcon />}
+                href="https://wa.me/+6282292479951"
+                sx={{
+                  backgroundColor: "#25D366",
+                  "&:hover": {
+                    backgroundColor: "#128C7E",
+                  },
+                }}
+              >
+                WhatsApp
+              </Button>
+              <Button
+                variant="contained"
+                startIcon={<FacebookIcon />}
+                href="https://facebook.com/p.toni.549"
+                sx={{
+                  backgroundColor: "#3b5998",
+                  "&:hover": {
+                    backgroundColor: "#2d4373",
+                  },
+                }}
+              >
+                Facebook
+              </Button>
+            </Box>
           </Grid>
         </Grid>
         <Box mt={isMobile ? 3 : 4}>
@@ -214,7 +249,7 @@ const AccountSummary: React.FC = () => {
                 key={index}
                 sx={{
                   "@media (min-width: 960px)": {
-                    flexBasis: "22%", // Adjust the size to fit the remaining boxes into one row
+                    flexBasis: "22%",
                     maxWidth: "22%",
                   },
                 }}
@@ -228,49 +263,43 @@ const AccountSummary: React.FC = () => {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    cursor: "pointer",
-                    position: "relative",
-                    overflow: "hidden",
                   }}
                 >
                   <Box
+                    className="detail-icon"
+                    sx={{
+                      color: "#ffd700",
+                      fontSize: isMobile ? 36 : 48,
+                      marginBottom: isMobile ? 1 : 2,
+                      transition: "transform 0.3s, opacity 0.3s",
+                    }}
+                  >
+                    {detail.icon}
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    className="detail-content"
+                    sx={{
+                      color: "#d3d3d3",
+                      fontSize: isMobile ? 12 : 16,
+                      transition: "all 0.3s",
+                      opacity: 0.7,
+                    }}
+                  >
+                    {detail.value}
+                  </Typography>
+                  <Typography
+                    variant="body2"
                     className="detail-overlay"
                     sx={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      backgroundColor: "rgba(255,215,0,0.2)",
+                      color: "#d3d3d3",
+                      fontSize: isMobile ? 10 : 12,
+                      transition: "opacity 0.3s",
                       opacity: 0,
                     }}
-                  />
-                  <Box
-                    className="detail-icon"
-                    sx={{ mb: 2, position: "relative", zIndex: 1 }}
                   >
-                    {React.cloneElement(detail.icon, {
-                      style: {
-                        color: detail.color || "#ffd700",
-                        fontSize: isMobile ? 24 : 30,
-                      },
-                    })}
-                  </Box>
-                  <Box
-                    className="detail-content"
-                    sx={{ position: "relative", zIndex: 2, opacity: 0.7 }}
-                  >
-                    <Typography
-                      variant="h6"
-                      className="font-semibold"
-                      style={{ color: detail.color || "#ffd700" }}
-                    >
-                      {detail.value}
-                    </Typography>
-                    <Typography variant="body2" style={{ color: "#d3d3d3" }}>
-                      {detail.label}
-                    </Typography>
-                  </Box>
+                    {detail.label}
+                  </Typography>
                 </Box>
               </Grid>
             ))}

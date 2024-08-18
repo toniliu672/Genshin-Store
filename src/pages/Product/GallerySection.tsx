@@ -37,7 +37,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({ imageLinks, handleClick
         preload: 3,
         closable: true,
         closeOnTap: true,
-        showMaximizeIcon: true,
+        showMaximizeIcon: false,
       });
     }
   }, []);
