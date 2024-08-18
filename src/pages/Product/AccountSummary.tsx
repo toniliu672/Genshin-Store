@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Typography, Card, Grid, Box, Avatar, Button, IconButton} from "@mui/material";
+import {
+  Typography,
+  Card,
+  Grid,
+  Box,
+  Avatar,
+  Button,
+  IconButton,
+} from "@mui/material";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import PersonIcon from "@mui/icons-material/Person";
 import StarIcon from "@mui/icons-material/Star";
@@ -10,7 +18,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import useDeviceSize from "../../hooks/useDeviceSize";
 import { gsap } from "gsap";
-import aetherIcon from '../../assets/character/Aether_Icon.webp';
+import aetherIcon from "../../assets/character/Aether_Icon.webp";
 
 const AccountSummary: React.FC = () => {
   const isMobile = useDeviceSize();
@@ -96,7 +104,7 @@ const AccountSummary: React.FC = () => {
       label: "Server",
       value: "Asia",
       color: "#d3d3d3",
-    }, 
+    },
   ];
 
   useEffect(() => {
@@ -167,7 +175,7 @@ const AccountSummary: React.FC = () => {
       <Box className="p-6 text-white">
         <Grid container spacing={isMobile ? 2 : 3} alignItems="center">
           <Grid item xs={12} md={3} className="text-center">
-            <Box className={`flex justify-center ${isMobile ? 'mb-4' : ''}`}>
+            <Box className={`flex justify-center ${isMobile ? "mb-4" : ""}`}>
               <Avatar
                 alt="Main Character"
                 src={aetherIcon}
@@ -182,56 +190,55 @@ const AccountSummary: React.FC = () => {
           <Grid item xs={12} md={9}>
             <Typography
               variant={isMobile ? "h5" : "h4"}
-              className={`font-bold mb-4 ${isMobile ? 'text-center' : ''}`}
+              className={`font-bold mb-4 ${isMobile ? "text-center" : ""}`}
               style={{ color: "#ffd700" }}
             >
               High Primo Acc
             </Typography>
             <Typography
-        variant="body1"
-        className="mb-6"
-        style={{
-          lineHeight: "1.8",
-          color: "#d3d3d3",
-          fontWeight: "300",
-          textAlign: isMobile ? "center" : "left",
-        }}
-      >
-        <span style={{ fontWeight: "bold", color: "#ffd700" }}>
-          Akun High Primo
-        </span>{" "}
-        - murni tanpa cheat.
-        <br />
-        <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: isMobile ? "center" : "left",
-        }}
-      >
-        <Typography
-          variant="body1"
-          style={{
-            lineHeight: "1.8",
-            color: "#ffd700",
-            fontWeight: "bold",
-          }}
-        >
-          Harga {isPriceVisible ? "Rp1.300.000" : "Rp*********"}
-        </Typography>
-        <IconButton
-          onClick={togglePriceVisibility}
-          sx={{ color: "#ffd700", marginLeft: 1 }}
-        >
-          {isPriceVisible ? <VisibilityOffIcon /> : <VisibilityIcon />}
-        </IconButton>
-      </Box>
-        <span style={{ fontWeight: "bold" }}>
-          Jual Akun Genshin Impact:
-        </span>{" "}
-        81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
-      </Typography>
-
+              variant="body1"
+              className="mb-6"
+              style={{
+                lineHeight: "1.8",
+                color: "#d3d3d3",
+                fontWeight: "300",
+                textAlign: isMobile ? "center" : "left",
+              }}
+            >
+              <span style={{ fontWeight: "bold", color: "#ffd700" }}>
+                Akun High Primo
+              </span>{" "}
+              - murni tanpa cheat.
+              <br />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: isMobile ? "center" : "left",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  style={{
+                    lineHeight: "1.8",
+                    color: "#ffd700",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Harga {isPriceVisible ? "Rp1.300.000" : "Rp*********"}
+                </Typography>
+                <IconButton
+                  onClick={togglePriceVisibility}
+                  sx={{ color: "#ffd700", marginLeft: 1 }}
+                >
+                  {isPriceVisible ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                </IconButton>
+              </Box>
+              <span style={{ fontWeight: "bold" }}>
+                Jual Akun Genshin Impact:
+              </span>{" "}
+              81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
+            </Typography>
 
             {/* Add Buttons for Contact */}
             <Box
@@ -243,6 +250,8 @@ const AccountSummary: React.FC = () => {
                 variant="contained"
                 startIcon={<WhatsAppIcon />}
                 href="https://wa.me/+6282292479951"
+                target="_blank" // Menambahkan target untuk membuka di tab baru
+                rel="noopener noreferrer" // Menambahkan rel untuk alasan keamanan
                 sx={{
                   backgroundColor: "#25D366",
                   "&:hover": {
@@ -256,6 +265,8 @@ const AccountSummary: React.FC = () => {
                 variant="contained"
                 startIcon={<FacebookIcon />}
                 href="https://facebook.com/p.toni.549"
+                target="_blank" // Menambahkan target untuk membuka di tab baru
+                rel="noopener noreferrer" // Menambahkan rel untuk alasan keamanan
                 sx={{
                   backgroundColor: "#3b5998",
                   "&:hover": {
