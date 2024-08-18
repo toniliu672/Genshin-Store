@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import PersonIcon from "@mui/icons-material/Person";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import StarIcon from "@mui/icons-material/Star";
 import LanguageIcon from "@mui/icons-material/Language";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -103,6 +104,12 @@ const AccountSummary: React.FC = () => {
       icon: <LanguageIcon />,
       label: "Server",
       value: "Asia",
+      color: "#d3d3d3",
+    },
+    {
+      icon: <AutoAwesomeIcon />,
+      label: "80 / 4",
+      value: "IF / AF",
       color: "#d3d3d3",
     },
   ];
@@ -237,7 +244,7 @@ const AccountSummary: React.FC = () => {
               <span style={{ fontWeight: "bold" }}>
                 Jual Akun Genshin Impact:
               </span>{" "}
-              81,000+ Primogems, AR 56, Bebas Cheat, Aman dan Siap Main!
+              81,000+ Primogems, AR 56, Standard Pity 45, Bebas Cheat, Aman dan Siap Main!
             </Typography>
 
             {/* Add Buttons for Contact */}
