@@ -1,0 +1,36 @@
+@keyframes move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 0.3px rgb(156, 156, 156); /* Stroke color and width */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.group:hover .text-outline,
+.group:active .text-outline {
+  color: rgb(65, 9, 9); /* Fill color on hover/active */
+  -webkit-text-stroke: 0; /* Remove stroke when filled */
+}
+
+
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.shape-1 { background: #ff9a9e; width: 300px; height: 300px; }
+.shape-2 { background: #fad0c4; width: 200px; height: 200px; }
+.shape-3 { background: #ffecd2; width: 250px; height: 250px; }
+.shape-4 { background: #fcb69f; width: 180px; height: 180px; }
